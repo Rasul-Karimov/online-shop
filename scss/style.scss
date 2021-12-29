@@ -337,21 +337,13 @@ body {
     }
 }
 
-.__icon-arrow-down {
-    background-color: transparent;
-}
-
-.__icon-search {
-    background-color: transparent;
-}
-
-.__icon-favorite {
-    background-color: transparent;
-}
-
+.__icon-arrow-down,
+.__icon-search,
+.__icon-favorite,
 .__icon-cart {
     background-color: transparent;
 }
+
 .search-form {
     &__icon {
         position: relative;
@@ -753,6 +745,10 @@ body {
 }
 
 /////////////////////////////////////main slider ///////////////////////////////
+
+.swiper-pagination {
+    text-align: left;
+}
 
 .page {
     flex: 1 1 auto;
@@ -1372,4 +1368,228 @@ body {
     }
 }
 .ibg {
+}
+
+.page {
+    &__rooms {
+    }
+}
+.rooms {
+    background-color: #fcf8f3;
+    padding: 44px 0 44px 0;
+    &__container {
+        @media (min-width: $md2) {
+            display: flex;
+        }
+    }
+
+    &__body {
+        flex: 0 0 465/1240 * 100%;
+        position: relative;
+        z-index: 5;
+        align-self: center;
+        @media (min-width: $md2) {
+            margin-right: 50px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    &__text {
+        line-height: 150%;
+        font-weight: 600;
+        margin: 0 0 24px 0;
+    }
+
+    &__button {
+        margin: 0 0 10px 0;
+        width: 176px;
+        height: 48px;
+        background: #e89f71;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 300ms ease 0s;
+        &:hover {
+            background-color: #f08a4b;
+        }
+    }
+
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+        align-self: flex-start;
+    }
+}
+.container {
+}
+.title {
+}
+.btn {
+}
+.slider-rooms {
+    position: relative;
+    &__body {
+        position: relative;
+    }
+
+    &__slide {
+        width: 372px;
+        position: relative;
+        overflow: hidden;
+        min-height: 480px;
+        &.swiper-slide-active {
+            .slider-rooms__image {
+                height: 480px;
+            }
+            @media (min-width: $md2) {
+                .slider-rooms__image {
+                    height: 440px;
+                }
+            }
+            @media (max-width: $md3) {
+                .slider-rooms__image {
+                    height: 400px;
+                }
+            }
+            @media (max-width: $md4) {
+                .slider-rooms__image {
+                    height: 350px;
+                }
+            }
+            .slider-rooms__content {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0);
+            }
+        }
+        @media (min-width: $md2) {
+            min-height: 440px;
+        }
+        @media (max-width: $md3) {
+            min-height: 400px;
+        }
+        @media (max-width: $md4) {
+            min-height: 350px;
+        }
+    }
+
+    &__image {
+        transition: all 800ms ease 0s;
+        height: 380px;
+        position: relative;
+        @media (min-width: $md2) {
+            height: 350px;
+        }
+        @media (max-width: $md3) {
+            height: 330px;
+        }
+        @media (max-width: $md4) {
+            height: 300px;
+        }
+    }
+
+    &__content {
+        transition: all 300ms ease 0s;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 20px);
+        position: absolute;
+        color: inherit;
+        max-width: 240px;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(3px);
+        bottom: 24px;
+        left: 24px;
+        padding: 25px;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(100%, 0);
+            width: 48px;
+            height: 48px;
+            background-color: $orangeColor;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__label {
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    &__arrows {
+        overflow: visible;
+        position: absolute;
+        top: 50%;
+        transform: translate(0px, -100%);
+        width: 100%;
+        left: 0;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+    }
+}
+
+.label-slider {
+    display: grid;
+    grid-template-columns: auto 27px auto;
+    color: $darkGraycolor;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    &:not(:last-child) {
+        margin: 0 0 8px 0;
+    }
+    &__number {
+    }
+
+    &__line {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: 3px;
+            left: 0;
+            height: 1px;
+            background-color: $darkGraycolor;
+        }
+    }
+
+    &__text {
+    }
+}
+.slider-arrrows {
+}
+.slider-arrow {
+    &__prev {
+    }
+
+    &__next {
+    }
+}
+.slider-rooms__dotts {
+    @media (min-width: 550px) {
+        position: relative;
+        z-index: 100;
+        transform: translate(400px, -50px);
+    }
+    @media (max-width: 550px) {
+        margin: 10px 0 0 0;
+    }
+}
+.main-doota {
 }
