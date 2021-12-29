@@ -84,6 +84,11 @@ function documentActions(e) {
     } else if (!tartgetElement.closest('.card-header') && !tartgetElement.classList.contains('actions-product__button')) {
         document.querySelector('.card-header').classList.remove('_active')
     }
+    if (tartgetElement.classList.contains('card-list__delete')) {
+        const productId = tartgetElement.closest('.card-list__item').dataset.cardPid;
+        updateCard(tartgetElement, productId, false);
+        e.preventDefault()
+    }
 
 }
 
@@ -319,5 +324,19 @@ function updateCard(productsButton, productId, productAdd = true) {
             cardProductQuantity.innerHTML = ++cardProductQuantity.innerHTML
         }
         productsButton.classList.remove('_hold')
+    } else {
+        const cardProductQuantity = cardProduct.querySelector('.card-list__quantity span');
+        cardProductQuantity.innerHTML = --cardProductQuantity.innerHTML
+        if (!parseInt(cardProductQuantity.innerHTML)) {
+            cardProduct.remove();
+        }
+        const cardQuantityValue = --cardQuantity.innerHTML
+
+        if (cardQuantityValue) {
+            cardQuantity.innerHTML = cardQuantityValue
+        } else {
+            cardQuantity.remove();
+            card.classList.remove('_active')
+        }
     }
 }
